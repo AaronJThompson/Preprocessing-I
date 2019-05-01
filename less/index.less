@@ -30,6 +30,7 @@
 }
 body{
 	background-color: @baseDarkColor;
+	max-width: 100%;
 }
 .main-container{
 	margin: 0 auto;
@@ -130,14 +131,23 @@ body{
 					.title-underline-border(@primaryColor);
 				}
 				.hobbies{
+					width:100%;
 					.flex-column(center);
 					align-items: flex-end;
 					text-align: right;
+					.attributes-container{
+						align-items: flex-end;
+					}
+				}
+				.skills{
+					width:100%;
 				}
 			}
 		}
 		.attributes-container{
 			.flex-column(center);
+			align-items:flex-start;
+			width:100%;
 			span{
 				font-size: 1em;
 				background-color: @primaryColor;
@@ -145,6 +155,7 @@ body{
 				padding: @attributeItemPadding;
 				.rounded-item(@primaryColor, 1em);
 				margin:@attributeItemMargin;
+				// width:auto;
 			}
 		}
 
@@ -182,6 +193,7 @@ body{
 						list-style-position: inside;
 					}
 				}
+				padding-bottom: 2rem;
 			}
 		}
 		&.contact{
