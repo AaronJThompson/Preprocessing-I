@@ -245,13 +245,10 @@ body {
   padding-left: 50%;
 }
 .main-container section.intro .rounded-box .gradient h1 {
-  font-size: 2em;
+  font-size: 4rem;
 }
 .main-container section.intro .rounded-box .gradient h2 {
-  font-size: 1.5em;
-}
-.main-container section.intro .rounded-box .gradient p {
-  font-size: 1em;
+  font-size: 3rem;
 }
 @media (max-width: 500px) {
   .main-container section.intro .rounded-box .gradient {
@@ -312,7 +309,6 @@ body {
   width: 100%;
 }
 .main-container section .attributes-container span {
-  font-size: 1em;
   background-color: #BF1534;
   color: #F2F2F2;
   padding: 0.5em 1em;

@@ -83,7 +83,7 @@ body{
 		width:100%;
 		height:100%;
 		min-height: inherit;
-		.rounded-box-border(2rem);
+		.rounded-box-border(@roundedBoxRadius);
 	}
 	section{
 		margin: @sectionMargin 0;
@@ -99,7 +99,7 @@ body{
 				.gradient{
 					.flex-column(space-evenly);
 					align-items: center;
-					.rounded-box-border(2rem);
+					.rounded-box-border(@roundedBoxRadius);
 					width: inherit;
 					height: inherit;
 					// Fade into the text
@@ -107,13 +107,10 @@ body{
 					padding-left: @introStartContent;
 
 					h1{
-						font-size: 2em;
+						font-size: @headerLargeFontSize;
 					}
 					h2{
-						font-size: 1.5em;
-					}
-					p{
-						font-size:1em;
+						font-size: @headerMediumFontSize;
 					}
 					@media (max-width: @mobileBreakpoint){
 						padding-left: 0;
@@ -164,11 +161,10 @@ body{
 			align-items:flex-start;
 			width:100%;
 			span{
-				font-size: 1em;
 				background-color: @primaryColor;
 				color: @whiteColor;
 				padding: @attributeItemPadding;
-				.rounded-item(@primaryColor, 1em);
+				.rounded-item(@primaryColor, @attributeRadius);
 				margin:@attributeItemMargin;
 				// width:auto;
 			}
@@ -192,19 +188,19 @@ body{
 			.experience-container{
 				width:100%;
 				h1{
-					font-size: 3rem;
+					font-size: @headerMediumFontSize;
 				}
 				h2{
-					font-size: 2rem;
+					font-size: @contentFontSize;
 				}
 				.date{
-					font-size: 1.5rem;
+					font-size: @mediumFontSize;
 					font-style: italic;
 					color: fade(black, 40%);
 				}
 				ul{
 					li{
-						font-size:1.5rem;
+						font-size:@mediumFontSize;
 						list-style-type: circle;
 						list-style-position: inside;
 					}
@@ -226,18 +222,18 @@ body{
 			margin-bottom: 0;
 			.contact-box{
 				background-color: @whiteColor;
-				.rounded-box-border-top(2rem);
+				.rounded-box-border-top(@roundedBoxRadius);
 				width:100%;
 				height:100%;
 				padding: 2.5%;
 
 				h1{
-					font-size: 3rem;
+					font-size: @headerMediumFontSize;
 					margin: 1rem auto;
 					text-align: center;
 				}
 				h2{
-					font-size: 2rem;
+					font-size: @contentFontSize;
 					margin: 0 auto;
 					text-align: center;
 				}
@@ -246,8 +242,8 @@ body{
 				}
 				.contact-icon-holder{
 					.flex-centered(space-around);
-					margin: 2rem auto;
-					font-size: 3rem;
+					margin: @contentFontSize auto;
+					font-size: @headerMediumFontSize;
 					width:50%;
 
 					a:hover{
