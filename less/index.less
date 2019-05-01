@@ -25,6 +25,8 @@
 @workPadding: 2rem 1rem;
 
 @contactHeight: 20rem;
+
+
 :root {
 	font-size: @defaultFontSize;
 }
@@ -86,6 +88,14 @@ body{
 		.rounded-box-border(@roundedBoxRadius);
 	}
 	section{
+		-moz-transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		transition: all 0.3s;
+		&:hover{
+			-moz-transform: scale(1.05);
+			-webkit-transform: scale(1.05);
+			transform: scale(1.05);
+		}
 		margin: @sectionMargin 0;
 		&.intro{
 			width:100%;
