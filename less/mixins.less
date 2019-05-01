@@ -1,0 +1,48 @@
+.flex-column(@justify){
+    display: flex;
+    flex-direction: column;
+    justify-content: @justify;
+}
+.flex-baseline(@justify){
+    display: flex;
+    align-items: baseline;
+    justify-content: @justify;
+}
+.flex-centered(@justify){
+    display: flex;
+    align-items: center;
+    justify-content: @justify;
+}
+.text-center-bottom{
+    text-align: center;
+    vertical-align: bottom;
+}
+.text-centered{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.rounded-box-border(@radius){
+    border: 0px solid inherit;
+    border-radius: @radius;
+}
+.rounded-box-border-top(@radius){
+    border: 0px solid inherit;
+    border-top-left-radius: @radius;
+    border-top-right-radius: @radius;
+}
+
+.title-underline-border(@color){
+    border-bottom: 0.1em solid @color;
+}
+.rounded-item(@color, @radius){
+    border: 0px solid @color;
+    border-radius: @radius;
+}
+.table-border{
+    border: 0.1rem solid @baseDarkColor;
+}
+.experience-splitter{
+    padding-bottom: 1em;
+    border-bottom: 0.1em solid grey;
+}

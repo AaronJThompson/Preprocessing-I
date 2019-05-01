@@ -1,59 +1,266 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import "reset.less";
+@import "mixins.less";
+@import "fonts.less";
+@import "appearance.less";
+// Dimensions
+@mobileBreakpoint: 500px;
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+@mainWidth: 90rem;
+@headerHeight: 5rem;
+@headerMargin: 1rem;
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
-}
+@sectionMargin: 2rem;
 
-html, body {
-    height: 100%;
-}
+@introHeight: 50rem;
+@introStartContent: 50%;
+@introImageOffset: -10rem;
 
+@attributesHeight: 60rem;
+@attributesPadding: 2rem;
+@attributesTitleWidth: 8em;
+@attributeItemPadding: 0.5em 1em;
+@attributeItemMargin: 0.5em 0;
+
+@workHeight: 50rem;
+@workPadding: 2rem 1rem;
+
+@contactHeight: 20rem;
+
+
+:root {
+	font-size: @defaultFontSize;
+}
+body{
+	background-color: @baseDarkColor;
+	max-width: 100%;
+}
+.main-container{
+	margin: 0 auto;
+	min-height: 100vh;
+	max-width: @mainWidth;
+	font-size: @contentFontSize;
+	font-family: @defaultFont;
+	.flex-column(flex-start);
+	a{
+		text-decoration: none;
+		color: @whiteColor;
+	}
+	header{
+		height: @headerHeight;
+		.flex-baseline(space-around);
+		width:100%;
+		background-color: @primaryColor;
+		border-bottom-left-radius: @navCornerRadius;
+		border-bottom-right-radius: @navCornerRadius;
+		margin-bottom: @headerMargin;
+		nav{
+			.flex-baseline(space-between);
+			flex-grow: 1;
+			height: 100%;
+			a{
+				.flex-column(center);
+				align-items: center;
+				width:100%;
+				height: 100%;
+				border-bottom: @navBorder;
+
+				&:last-child{
+					border-right: @navBorder;
+					border-bottom-right-radius: @navCornerRadius;
+				}
+				&:first-child{
+					border-left: @navBorder;
+					border-bottom-left-radius: @navCornerRadius;
+				}
+
+				&:hover{
+					background-color: darken(@primaryColor, 20%);
+				}
+			}
+			
+		}
+	}
+	.rounded-box{
+		background-color: @whiteColor;
+		width:100%;
+		height:100%;
+		min-height: inherit;
+		.rounded-box-border(@roundedBoxRadius);
+	}
+	section{
+		-moz-transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		transition: all 0.3s;
+		&:hover{
+			-moz-transform: scale(1.05);
+			-webkit-transform: scale(1.05);
+			transform: scale(1.05);
+		}
+		margin: @sectionMargin 0;
+		&.intro{
+			width:100%;
+			height: @introHeight;
+			.rounded-box{
+				.flex-centered(space-between);
+				background-image: url("../images/aaron-2.png");
+				background-position-x: @introImageOffset;
+				background-repeat: no-repeat;
+
+				.gradient{
+					.flex-column(space-evenly);
+					align-items: center;
+					.rounded-box-border(@roundedBoxRadius);
+					width: inherit;
+					height: inherit;
+					// Fade into the text
+					background-image: linear-gradient(to right, fade(@whiteColor, 0%) 0, @whiteColor 80%);
+					padding-left: @introStartContent;
+
+					h1{
+						font-size: @headerLargeFontSize;
+					}
+					h2{
+						font-size: @headerMediumFontSize;
+					}
+					@media (max-width: @mobileBreakpoint){
+						padding-left: 0;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		&.attributes{
+			width:100%;
+			min-height:@attributesHeight;
+
+			.rounded-box{
+				.flex-centered(space-between);
+				padding: @attributesPadding;
+				h1{
+					color:@primaryColor;
+					width:@attributesTitleWidth;
+					.title-underline-border(@primaryColor);
+				}
+				.hobbies{
+					width:100%;
+					.flex-column(center);
+					align-items: flex-end;
+					text-align: right;
+					.attributes-container{
+						align-items: flex-end;
+					}
+					@media(max-width:@mobileBreakpoint){
+						text-align: left;
+						align-items: flex-start;
+						.attributes-container{
+							align-items: flex-start;
+						}
+					}
+				}
+				.skills{
+					width:100%;
+				}
+				@media(max-width:@mobileBreakpoint){
+					.flex-column(space-around);
+				}
+			}
+		}
+		.attributes-container{
+			.flex-column(center);
+			align-items:flex-start;
+			width:100%;
+			span{
+				background-color: @primaryColor;
+				color: @whiteColor;
+				padding: @attributeItemPadding;
+				.rounded-item(@primaryColor, @attributeRadius);
+				margin:@attributeItemMargin;
+				// width:auto;
+			}
+		}
+
+		&.work{
+			width:100%;
+			height: @workHeight;
+			.rounded-box{
+				padding:@workPadding;
+				.flex-column(center);
+				align-items: flex-start;
+				width: 100%;
+			}
+			.work-experience{
+				width:100%;
+
+				@media (max-width: @mobileBreakpoint){
+				}
+			}
+			.experience-container{
+				width:100%;
+				h1{
+					font-size: @headerMediumFontSize;
+				}
+				h2{
+					font-size: @contentFontSize;
+				}
+				.date{
+					font-size: @mediumFontSize;
+					font-style: italic;
+					color: fade(black, 40%);
+				}
+				ul{
+					li{
+						font-size:@mediumFontSize;
+						list-style-type: circle;
+						list-style-position: inside;
+					}
+				}
+				&::after{
+					margin: 0 auto;
+					bottom: 0;
+					content: '';
+					display: block;
+					height: 0.1em;
+					margin-bottom: 0.1em;
+					width: 80%;
+					.experience-splitter;
+				}
+			}
+		}
+		&.contact{
+			height:@contactHeight;
+			margin-bottom: 0;
+			.contact-box{
+				background-color: @whiteColor;
+				.rounded-box-border-top(@roundedBoxRadius);
+				width:100%;
+				height:100%;
+				padding: 2.5%;
+
+				h1{
+					font-size: @headerMediumFontSize;
+					margin: 1rem auto;
+					text-align: center;
+				}
+				h2{
+					font-size: @contentFontSize;
+					margin: 0 auto;
+					text-align: center;
+				}
+				a{
+					color: black;
+				}
+				.contact-icon-holder{
+					.flex-centered(space-around);
+					margin: @contentFontSize auto;
+					font-size: @headerMediumFontSize;
+					width:50%;
+
+					a:hover{
+						color: @primaryColor;
+					}
+				}
+			}
+		}
+	}
+}
