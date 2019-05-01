@@ -3,13 +3,14 @@
 @import "fonts.less";
 @import "appearance.less";
 // Dimensions
-@mainWidth: 900px;
+@mainWidth: 90rem;
 @headerHeight: 5rem;
 @sectionMargin: 2rem;
 @headerMargin: 1rem;
 @introHeight: 50rem;
-
+@introStartContent: 50%;
 @introImageOffset: -10rem;
+@skillsHeight: 60rem;
 :root {
 	font-size: @defaultFontSize;
 }
@@ -77,12 +78,30 @@ body{
 				background-repeat: no-repeat;
 
 				.gradient{
+					.flex-column(space-evenly);
+					align-items: center;
 					.rounded-box-border(2rem);
 					width: inherit;
 					height: inherit;
 					background-image: linear-gradient(to right, fade(@whiteColor, 0%) 0, @whiteColor 80%);
+					padding-left: @introStartContent;
+
+					h1{
+						font-size: 2em;
+					}
+					h2{
+						font-size: 1.5em;
+					}
+					p{
+						font-size:1em;
+					}
 				}
 			}
+		}
+
+		&.skills{
+			width:100%;
+			height:@skillsHeight;
 		}
 	}
 }
