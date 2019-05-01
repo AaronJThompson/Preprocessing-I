@@ -202,15 +202,29 @@ body {
 .main-container .rounded-box {
   background-color: #F2F2F2;
   width: 100%;
+  height: 100%;
   border: 0px solid inherit;
   border-radius: 2rem;
-  padding: 1.5rem;
-  height: 50vh;
 }
 .main-container section {
   margin: 2rem 0;
 }
-.main-container section .intro {
+.main-container section.intro {
   width: 100%;
-  height: 50vh;
+  height: 50rem;
+}
+.main-container section.intro .rounded-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url("../images/aaron-2.png");
+  background-position-x: -10rem;
+  background-repeat: no-repeat;
+}
+.main-container section.intro .rounded-box .gradient {
+  border: 0px solid inherit;
+  border-radius: 2rem;
+  width: inherit;
+  height: inherit;
+  background-image: linear-gradient(to right, rgba(242, 242, 242, 0) 0, #F2F2F2 80%);
 }

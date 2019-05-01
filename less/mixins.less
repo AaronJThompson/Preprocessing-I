@@ -8,6 +8,11 @@
     align-items: baseline;
     justify-content: @justify;
 }
+.flex-centered(@justify){
+    display: flex;
+    align-items: center;
+    justify-content: @justify;
+}
 .text-center-bottom{
     text-align: center;
     vertical-align: bottom;
@@ -20,5 +25,4 @@
 .rounded-box-border(@radius){
     border: 0px solid inherit;
     border-radius: @radius;
-    padding: @radius * .75;
 }
