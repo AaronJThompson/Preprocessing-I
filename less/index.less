@@ -1,5 +1,10 @@
 @import "reset.less";
+@import "mixins.less";
 
-html{
-	background-color: red;
+// Dimensions
+@mainWidth: 900px;
+.main-container{
+	margin: 0 auto;
+	max-width: @mainWidth;
+	.flex-column(flex-start);
 }
