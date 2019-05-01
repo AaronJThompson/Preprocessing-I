@@ -81,7 +81,8 @@ body{
 	.rounded-box{
 		background-color: @whiteColor;
 		width:100%;
-		height: 100%;
+		height:100%;
+		min-height: inherit;
 		.rounded-box-border(2rem);
 	}
 	section{
@@ -124,7 +125,7 @@ body{
 
 		&.attributes{
 			width:100%;
-			height:@attributesHeight;
+			min-height:@attributesHeight;
 
 			.rounded-box{
 				.flex-centered(space-between);
@@ -142,9 +143,19 @@ body{
 					.attributes-container{
 						align-items: flex-end;
 					}
+					@media(max-width:@mobileBreakpoint){
+						text-align: left;
+						align-items: flex-start;
+						.attributes-container{
+							align-items: flex-start;
+						}
+					}
 				}
 				.skills{
 					width:100%;
+				}
+				@media(max-width:@mobileBreakpoint){
+					.flex-column(space-around);
 				}
 			}
 		}
