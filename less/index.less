@@ -100,6 +100,7 @@ body{
 					.rounded-box-border(2rem);
 					width: inherit;
 					height: inherit;
+					// Fade into the text
 					background-image: linear-gradient(to right, fade(@whiteColor, 0%) 0, @whiteColor 80%);
 					padding-left: @introStartContent;
 
@@ -150,38 +151,35 @@ body{
 		&.work{
 			width:100%;
 			height: @workHeight;
-
-			.table-container{
+			.rounded-box{
 				padding:@workPadding;
-				.flex-centered(space-between);
+				.flex-column(center);
+				align-items: flex-start;
 				width: 100%;
-				
-				table{
-					width:45%;
+			}
+			.work-experience{
 
-					tr{
-						width:100%;
-						th,td{
-							.table-border;
-						}
-						th{
-							background-color:@baseColor;
-							color:@whiteColor;
-						}
-						td{
-							background-color:lighten(@baseColor, 80%);
-							font-size: 0.8em;
-						}
-					}
-				}
 
 				@media (max-width: @mobileBreakpoint){
-					.flex-column(space-evenly);
-					align-items:center;
-
-					table{
-						width:90%;
-						margin-bottom: 5rem;
+				}
+			}
+			.experience-container{
+				h1{
+					font-size: 3rem;
+				}
+				h2{
+					font-size: 2rem;
+				}
+				.date{
+					font-size: 1.5rem;
+					font-style: italic;
+					color: fade(black, 40%);
+				}
+				ul{
+					li{
+						font-size:1.5rem;
+						list-style-type: circle;
+						list-style-position: inside;
 					}
 				}
 			}
