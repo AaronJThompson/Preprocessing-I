@@ -3,6 +3,8 @@
 @import "fonts.less";
 @import "appearance.less";
 // Dimensions
+@mobileBreakpoint: 500px;
+
 @mainWidth: 90rem;
 @headerHeight: 5rem;
 @headerMargin: 1rem;
@@ -170,6 +172,16 @@ body{
 							background-color:lighten(@baseColor, 80%);
 							font-size: 0.8em;
 						}
+					}
+				}
+
+				@media (max-width: @mobileBreakpoint){
+					.flex-column(space-evenly);
+					align-items:center;
+
+					table{
+						width:90%;
+						margin-bottom: 5rem;
 					}
 				}
 			}
