@@ -5,29 +5,39 @@
 // Dimensions
 @mainWidth: 900px;
 @headerHeight: 5rem;
+@sectionMargin: 2rem;
+@headerMargin: 1rem;
 :root {
 	font-size: @defaultFontSize;
 }
+body{
+	background-color: @baseDarkColor;
+}
 .main-container{
 	margin: 0 auto;
+	min-height: 100vh;
 	max-width: @mainWidth;
 	font-size: @contentFontSize;
 	font-family: @defaultFont;
 	.flex-column(flex-start);
 	a{
 		text-decoration: none;
-		color: black;
+		color: @whiteColor;
 	}
 	header{
 		height: @headerHeight;
 		.flex-baseline(space-around);
 		width:100%;
+		background-color: @primaryColor;
+		border-bottom-left-radius: @navCornerRadius;
+		border-bottom-right-radius: @navCornerRadius;
+		margin-bottom: @headerMargin;
 		nav{
 			.flex-baseline(space-between);
 			flex-grow: 1;
 			height: 100%;
 			a{
-				.flex-column(flex-end);
+				.flex-column(center);
 				align-items: center;
 				width:100%;
 				height: 100%;
@@ -37,8 +47,26 @@
 
 				&:last-child{
 					border-right: @navBorder;
+					border-bottom-right-radius: @navCornerRadius;
+				}
+				&:first-child{
+					border-bottom-left-radius: @navCornerRadius;
 				}
 			}
+			
+		}
+	}
+	.rounded-box{
+		background-color: @whiteColor;
+		width:100%;
+		.rounded-box-border(2rem);
+		height: 50vh;
+	}
+	section{
+		margin: @sectionMargin 0;
+		.intro{
+			width:100%;
+			height: 50vh;
 			
 		}
 	}
