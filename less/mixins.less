@@ -26,6 +26,11 @@
     border: 0px solid inherit;
     border-radius: @radius;
 }
+.rounded-box-border-top(@radius){
+    border: 0px solid inherit;
+    border-top-left-radius: @radius;
+    border-top-right-radius: @radius;
+}
 
 .title-underline-border(@color){
     border-bottom: 0.1em solid @color;
@@ -33,4 +38,7 @@
 .rounded-item(@color, @radius){
     border: 0px solid @color;
     border-radius: @radius;
+}
+.table-border{
+    border: 0.1rem solid @baseDarkColor;
 }
