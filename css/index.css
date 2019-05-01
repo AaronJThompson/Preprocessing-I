@@ -338,3 +338,14 @@ body {
 .main-container section.contact .contact-box a {
   color: black;
 }
+.main-container section.contact .contact-box .contact-icon-holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem auto;
+  font-size: 3rem;
+  width: 50%;
+}
+.main-container section.contact .contact-box .contact-icon-holder a:hover {
+  color: #BF1534;
+}
