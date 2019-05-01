@@ -242,7 +242,39 @@ body {
 .main-container section.intro .rounded-box .gradient p {
   font-size: 1em;
 }
-.main-container section.skills {
+.main-container section.attributes {
   width: 100%;
   height: 60rem;
+}
+.main-container section.attributes .rounded-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.main-container section.attributes .rounded-box h1 {
+  color: #BF1534;
+  width: 8em;
+  border-bottom: 0.1em solid #BF1534;
+}
+.main-container section.attributes .rounded-box .hobbies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+}
+.main-container section .attributes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-container section .attributes-container span {
+  font-size: 1em;
+  background-color: #BF1534;
+  color: #F2F2F2;
+  padding: 0.5em 1em;
+  border: 0px solid #BF1534;
+  border-radius: 1em;
+  margin: 0.5em 0;
 }

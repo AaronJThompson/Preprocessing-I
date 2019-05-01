@@ -10,7 +10,11 @@
 @introHeight: 50rem;
 @introStartContent: 50%;
 @introImageOffset: -10rem;
-@skillsHeight: 60rem;
+@attributesHeight: 60rem;
+@attributesPadding: 2rem;
+@attributesTitleWidth: 8em;
+@attributeItemPadding: 0.5em 1em;
+@attributeItemMargin: 0.5em 0;
 :root {
 	font-size: @defaultFontSize;
 }
@@ -99,9 +103,35 @@ body{
 			}
 		}
 
-		&.skills{
+		&.attributes{
 			width:100%;
-			height:@skillsHeight;
+			height:@attributesHeight;
+
+			.rounded-box{
+				.flex-centered(space-between);
+				padding: @attributesPadding;
+				h1{
+					color:@primaryColor;
+					width:@attributesTitleWidth;
+					.title-underline-border(@primaryColor);
+				}
+				.hobbies{
+					.flex-column(center);
+					align-items: flex-end;
+					text-align: right;
+				}
+			}
+		}
+		.attributes-container{
+			.flex-column(center);
+			span{
+				font-size: 1em;
+				background-color: @primaryColor;
+				color: @whiteColor;
+				padding: @attributeItemPadding;
+				.rounded-item(@primaryColor, 1em);
+				margin:@attributeItemMargin;
+			}
 		}
 	}
 }
