@@ -5,11 +5,14 @@
 // Dimensions
 @mainWidth: 90rem;
 @headerHeight: 5rem;
-@sectionMargin: 2rem;
 @headerMargin: 1rem;
+
+@sectionMargin: 2rem;
+
 @introHeight: 50rem;
 @introStartContent: 50%;
 @introImageOffset: -10rem;
+
 @attributesHeight: 60rem;
 @attributesPadding: 2rem;
 @attributesTitleWidth: 8em;
@@ -49,16 +52,19 @@ body{
 				align-items: center;
 				width:100%;
 				height: 100%;
-				font-weight: bold;
 				border-bottom: @navBorder;
-				border-left: @navBorder;
 
 				&:last-child{
 					border-right: @navBorder;
 					border-bottom-right-radius: @navCornerRadius;
 				}
 				&:first-child{
+					border-left: @navBorder;
 					border-bottom-left-radius: @navCornerRadius;
+				}
+
+				&:hover{
+					background-color: darken(@primaryColor, 20%);
 				}
 			}
 			
@@ -132,6 +138,10 @@ body{
 				.rounded-item(@primaryColor, 1em);
 				margin:@attributeItemMargin;
 			}
+		}
+
+		&.work{
+			
 		}
 	}
 }
